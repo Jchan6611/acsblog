@@ -1,6 +1,18 @@
-<h1>Welcome to ACS Report </h1>
+<html>
+<body>
+<head>
+<p><%= link_to 'Back', root_path %> </p>
+</head>
+
+<h1>Welcome to Estimates Data Report </h1>
 
 
-<p><%= link_to 'Estimates Report', estimates_summaries_path %> </p>
+<%= render 'form' %>
 
-<p><%= link_to 'Margin Error Report', margin_error_summaries_path %> </p>
+<details>
+   <p>* Please use state abbreviations for search.</p>
+   <p>* Get all state Estimate Data by input "all". </p>
+</details> 
+
+</body>
+</html>

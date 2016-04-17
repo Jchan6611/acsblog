@@ -1,0 +1,5 @@
+<%= form_tag("/esearch", method: "get")  do %>
+  <%= label_tag(:state, "Search By State:") %>
+  <%= text_field_tag :state, params[:state], :id=>'search_field' %>
+  <%= submit_tag "Estimate Data Search", :name=>nil %>
+<% end %>
