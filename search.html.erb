@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= link_to 'Back', margin_error_summaries_path %>
+</head>
+
+<body>
+
+<h1>ACS Margin Error Summary</h1>
+<table>
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="30">
+<col width="120">
+
+<tr>
+    <th>FILEID</th>
+    <th>FILETYPE</th>
+    <th>SEQUENCE</th> 
+    <th>CHARITER</th>
+    <th>STUSAB</th>
+    <th>LOGRECNO</th>
+    <th>UA</th>
+    <th>STATE</th>
+    <th>ZIP</th>
+    <th>GEOID</th>
+    <th>NAME</th>
+    <th colspan="10"></th>
+  </tr>
+ 
+  <% @margin_error_summaries.each do |margin_error_summary| %>
+    <tr>
+      <td><%= margin_error_summary.FILEID %></td>
+      <td><%= margin_error_summary.FILETYPE %></td>
+      <td><%= margin_error_summary.SEQUENCE %></td>
+      <td><%= margin_error_summary.CHARITER %></td>
+      <td><%= margin_error_summary.STUSAB %></td>
+      <td><%= margin_error_summary.LOGRECNO %></td>
+      <td><%= margin_error_summary.UA %></td>
+      <td><%= margin_error_summary.STATE %></td>
+      <td><%= margin_error_summary.ZIPCODE %></td>
+      <td><%= margin_error_summary.GEOID %></td>
+      <td><%= margin_error_summary.NAME.encode("UTF-8", 'binary', invalid: :replace, undef: :replace, replace: '') %></td>
+    </tr>
+  <% end %>
+</table>
+
+</body>
+
+</html>
+
