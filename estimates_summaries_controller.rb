@@ -4,7 +4,7 @@ class EstimatesSummariesController < ApplicationController
   
   def search
     if params[:state].upcase=="ALL"
-       	@estimates_summaries = Estimates_summary.all
+       	@estimates_summaries = Estimates_summary.all.order("state")
     else
     	@estimates_summaries = Estimates_summary.where("STATE = ?", params[:state].upcase)
     end

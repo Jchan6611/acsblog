@@ -5,7 +5,7 @@ class MarginErrorSummariesController < ApplicationController
   
   def search
     if params[:state].upcase=="ALL"
-       	@margin_error_summaries = Margin_error_summary.all
+       	@margin_error_summaries = Margin_error_summary.all.order("state")
     else
     	@margin_error_summaries = Margin_error_summary.where("STATE = ?", params[:state].upcase)
     end
